@@ -12,6 +12,7 @@ setup(
     packages=['timeshade'],
     description='Shade nighttime of time-series',
     long_description=description,
+    long_description_content_type='text/markdown',
     author='Justin Shenk',
     author_email='shenkjustin@gmail.com',
     url='https://github.com/justinshenk/timeshade',
