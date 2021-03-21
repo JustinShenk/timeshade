@@ -2,7 +2,8 @@ from setuptools import setup
 
 try:
     import pypandoc
-    description = pypandoc.convert(source='README.md', format='markdown_github', to='rst', outputfile='README.rst')
+    pypandoc.convert_file('README.md', format='markdown_github', to='rst', outputfile='README.rst')
+    description = open('README.rst').read()
 except (IOError, ImportError) as e:
     print(e)
     description = open('README.md').read()
@@ -13,7 +14,6 @@ setup(
     packages=['timeshade'],
     description='Shade nighttime of time-series',
     long_description=description,
-    long_description_content_type='text/markdown',
     author='Justin Shenk',
     author_email='shenkjustin@gmail.com',
     url='https://github.com/justinshenk/timeshade',
