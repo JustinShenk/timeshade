@@ -16,7 +16,7 @@ idx = pd.date_range("2018-01-01", periods=100, freq="H")
 ts = pd.Series(range(len(idx)), index=idx)
 
 # shade
-import tshade
+import timeshade
 timeshade.shade(ts)
 
 # plot
