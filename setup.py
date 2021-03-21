@@ -3,7 +3,8 @@ from setuptools import setup
 try:
     import pypandoc
     description = pypandoc.convert(source='README.md', format='markdown_github', to='rst', outputfile='README.rst')
-except (IOError, ImportError):
+except (IOError, ImportError) as e:
+    print(e)
     description = open('README.md').read()
 
 
