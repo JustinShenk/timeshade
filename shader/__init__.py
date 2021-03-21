@@ -4,6 +4,7 @@ import numpy as np
 import pandas as pd
 from pandas.core.dtypes.common import is_datetime_or_timedelta_dtype
 
+__version__ = "21.0"
 
 def find_runs(x: pd.Series) -> (np.ndarray, np.ndarray, np.ndarray):
     """Find runs of consecutive items in an array.
@@ -38,7 +39,7 @@ def shade(
 ):
     """Color dark phase in plot.
     Args:
-    
+
         series (pd.Series) - Time-series variable
         ax (:class: `~matplotlib.axes.Axes`): axis to plot on (eg, `plt.gca()`)
         start (int): start of dark period/night
@@ -46,7 +47,7 @@ def shade(
     Returns:
 
         ax (:class:`~matplotlib.axes._subplots.AxesSubplot`): Axes of plot
-    """    
+    """
     assert is_datetime_or_timedelta_dtype(
         series.index
     ), f"Series must have datetime index but has {type(series.index)}"
@@ -64,7 +65,7 @@ def shade(
             start = run_starts[idx]
             end = run_starts[idx] + run_lengths[idx] - 1
             ax.axvspan(series.index[start], series.index[end], alpha=0.5, color="gray")
-    
+
     fig = plt.gcf()
     fig.autofmt_xdate()
     return ax

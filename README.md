@@ -15,12 +15,12 @@ import shader; import pandas as pd
 idx = pd.date_range("2018-01-01", periods=100, freq="H")
 ts = pd.Series(range(len(idx)), index=idx)
 
-# shade 
+# shade
 import shader
 shader.shade(ts)
 
 # plot
-import matpotlib.pyplot as plt
+import matplotlib.pyplot as plt
 plt.show()
 ```
 
